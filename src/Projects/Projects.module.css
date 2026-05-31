@@ -1,0 +1,204 @@
+ /* MAIN CONTAINER */
+.maincontainer{
+    width: 100%;
+    min-height: 100vh;
+    padding: 50px 20px;
+}
+
+/* TITLE */
+.title{
+    text-align: center;
+    margin-bottom: 10px;
+    /* color: black; */
+}
+
+/* DESCRIPTION */
+.desc{
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 14px;
+    /* color: #aaa; */
+}
+
+/* ===== HORIZONTAL CENTER SCROLL ===== */
+.innercontainer{
+    display: flex;
+    justify-content: center;   /* 🔥 center cards */
+    gap: 25px;
+    overflow-x: auto;
+    padding: 30px 10px;
+}
+
+.innercontainer::-webkit-scrollbar{
+    display: none;
+}
+
+/* ===== CARD ===== */
+.card{
+    min-width: 280px;
+    max-width: 280px;
+    height: 370px;
+
+    border-radius: 18px;
+    background: #ffffff;
+    color: black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 12px;
+
+    /* premium shadow */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+
+    transition: all 0.35s ease;
+}
+
+/* ===== IMAGE ===== */
+.image{
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+
+    border-radius: 12px;
+    margin-top: 5px;
+
+    transition: transform 0.4s ease;
+}
+
+/* ===== CONTENT ===== */
+.content{
+    text-align: center;
+    padding: 5px;
+}
+
+.content h6{
+    margin: 10px 0 5px;
+    font-size: 16px;
+    color: #111;
+}
+
+.content p{
+    font-size: 12px;
+    color: #555;
+}
+
+/* ===== BUTTON GROUP ===== */
+.btnGroup{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding-bottom: 10px;
+}
+
+/* ===== PREMIUM BUTTON ===== */
+.btn{
+    padding: 8px 18px;
+    font-size: 12px;
+    border-radius: 25px;
+
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+
+    border: none;
+
+    /* 🔥 premium glow */
+    box-shadow: 0 5px 20px rgba(56,189,248,0.5);
+
+    transition: all 0.3s ease;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* 🔥 SHINE EFFECT */
+.btn::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+    );
+
+    transition: 0.6s;
+}
+
+.btn:hover::before{
+    left: 100%;
+}
+
+/* HOVER */
+.btn:hover{
+    transform: translateY(-2px) scale(1.08);
+    box-shadow: 0 10px 25px rgba(56,189,248,0.8);
+}
+
+/* CLICK */
+.btn:active{
+    transform: scale(0.95);
+}
+
+/* ===== CARD HOVER ===== */
+.card:hover{
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+}
+
+/* IMAGE ZOOM */
+.card:hover .image{
+    transform: scale(1.1);
+}
+
+/* a */
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px){
+    .card{
+        min-width: 240px;
+        height: 340px;
+    }
+}
+
+@media (max-width: 480px){
+    .card{
+        min-width: 220px;
+        height: 310px;
+    }
+
+    .desc{
+        font-size: 13px;
+        padding: 0 10px;
+    }
+}
+
+.innercontainer{
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+}
+
+@media (max-width: 768px){
+  .innercontainer{
+    overflow-x: hidden;   /* remove scroll */
+    flex-wrap: wrap;      /* wrap cards */
+    justify-content: center;
+  }
+}
+.card{
+  flex-shrink: 0;
+}

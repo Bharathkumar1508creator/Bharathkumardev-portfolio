@@ -1,0 +1,151 @@
+/* ✅ Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================= NAVBAR ================= */
+
+/* Entry animation */
+.navbar {
+  animation: slideDown 0.6s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Nav link base */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Active link */
+.active-link {
+  color: #007bff !important;
+  font-weight: 600;
+}
+
+.active-link::after {
+  width: 100%;
+}
+
+/* Hover glow */
+.nav-link:hover {
+  color: #007bff;
+  text-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* ================= BUTTON ================= */
+
+.btn {
+  transition: all 0.3s ease;
+}
+
+.navbar .btn {
+  padding: 6px 14px;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  /* Navbar brand center */
+  .navbar-brand {
+    margin-left: 0 !important;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Collapse background */
+  .navbar-collapse {
+    background: inherit;
+    padding: 10px;
+  }
+
+  /* Nav items center */
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+  }
+
+  /* Dark mode button center */
+  .navbar .btn {
+    margin: 10px auto !important;
+    display: block;
+  }
+
+  /* Fix bootstrap container spacing */
+  .navbar .container {
+    padding: 10px 15px !important;
+  }
+}
+
+/* ================= DARK MODE ================= */
+
+body {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* global smooth transition */
+* {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Dark theme */
+.dark-mode {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+/* Navbar dark */
+.dark-mode .navbar {
+  background-color: #1e293b !important;
+}
+
+/* Sections */
+.dark-mode .section {
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+
+/* Button dark */
+.dark-mode .btn {
+  background-color: #334155;
+  color: white;
+}
+
+
+
+/* footer */
+

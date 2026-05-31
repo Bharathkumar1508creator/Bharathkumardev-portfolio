@@ -1,0 +1,279 @@
+.maincontainer{
+  margin-top: 110px;
+  min-height: 100vh;
+}
+
+
+.container{
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 80px;
+  justify-content: space-around;
+}
+
+/* cardcontainer */
+.cardcontainer{
+  width: 250px;
+  height: 250px;
+  position: relative;
+  perspective: 1000px;
+  margin: 30px;
+}
+
+/* front & back common */
+.front, .back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+}
+
+/* front image */
+.front img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* back side */
+.back{
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* flip animation */
+.firstcard, .seccard, .thirdcard{
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: 0.6s;
+}
+
+.firstcard:hover{
+  transform: rotateY(180deg);
+}
+
+.seccard:hover{
+  transform: rotateY(180deg);
+}
+
+.thirdcard:hover{
+  transform: rotateY(180deg);
+}
+/* animations */
+.cardcontainer{
+  width: 250px;
+  height: 250px;
+  position: relative;
+  perspective: 1000px;
+
+  /* 🔥 glass effect */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* 🔥 shadow */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+
+  border-radius: 15px;
+  overflow: hidden;
+}
+/* zoom */
+.cardcontainer:hover{
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+/* flip,shadow */
+.firstcard, .seccard, .thirdcard{
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: 0.6s;
+}
+
+/* hover flip already irukku — add glow */
+.firstcard:hover,
+.seccard:hover,
+.thirdcard:hover{
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+/* animations */
+.cardcontainer{
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeUp 1s forwards;
+}
+
+@keyframes fadeUp{
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*  */
+.cardcontainer{
+  border: 2px solid transparent;
+  color: black;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(45deg, grey, white) border-box;
+}
+/* contentcard */
+/* 🔥 Container Animation */
+.Addvalue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+}
+
+/* 🔥 Card Style */
+.contentText {
+  position: relative;
+  padding: 20px 30px;
+  background: #ffffff;
+  color: black;
+  border-radius: 12px;
+  font-size: 14px;
+  text-align: center;
+  width: 60%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  overflow: hidden;
+  z-index: 1;
+
+  /* 🔥 Animation */
+  animation: fadeSlide 0.5s ease forwards;
+}
+
+/* 🔥 Fade + Slide animation */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 🔥 BEFORE effect (glow border) */
+.contentText::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #007bff, #00d4ff);
+  z-index: -2;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+/* 🔥 AFTER effect (inner bg) */
+.contentText::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  border-radius: 12px;
+  z-index: -1;
+}
+
+/* 🔥 Hover effect */
+.contentText:hover::before {
+  opacity: 1;
+  filter: blur(6px);
+}
+
+/* 🔥 Hover lift */
+.contentText:hover {
+  transform: translateY(-5px) scale(1.02);
+  transition: 0.3s;
+}
+/* 🔥 Button Base */
+.btn {
+  position: relative;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #007bff;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s ease;
+  z-index: 1;
+}
+
+/* 🔥 Hover */
+.btn:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* 🔥 Click (active) */
+.btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+/* 🔥 Glow effect */
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+/* 🔥 Shine animation on hover */
+.btn:hover::before {
+  transform: translateX(100%);
+}
+
+/* 🔥 Border glow */
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #00d4ff, #007bff);
+  z-index: -1;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.btn:hover::after {
+  opacity: 1;
+  filter: blur(5px);
+}
+
+@media (max-width: 768px){
+  .container{
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .cardcontainer{
+    width: 200px;
+    height: 200px;
+  }
+}
+.contentText{
+  width: 60%;
+}
+@media (max-width: 768px){
+  .contentText{
+    width: 90%;
+    font-size: 13px;
+  }
+}

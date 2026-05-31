@@ -1,0 +1,144 @@
+/* reset (important) */
+body {
+  margin: 0;
+}
+
+/* full screen center */
+.container{
+  min-height: 100vh;              /* full screen height */
+  display: flex;
+  flex-direction: column;         /* stack items */
+  justify-content: center;        /* vertical center */
+  align-items: center;            /* horizontal center */
+  text-align: center;
+  padding: 20px;
+}
+
+/* image section */
+.imgcontainer{
+  margin-bottom: 15px;
+}
+
+/* square image */
+.image{
+  width: 180px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* name */
+.title{
+  margin-top: 10px;
+}
+
+/* paragraph */
+.dec{
+  max-width: 700px;               /* 🔥 prevents full width stretch */
+  margin: 10px auto;
+  line-height: 1.6;
+}
+
+/* button */
+.btn{
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #3975b7;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.btn:hover{
+    background-color: darkgrey;
+    color: black;
+    transition: all 0.5s ease;
+}
+/* animations */
+.container {
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*  */
+.image {
+  animation: popIn 0.8s ease;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}   
+
+/*  */
+.title {
+  animation: slideUp 0.8s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/*  */
+.dec {
+  animation: fadeUp 1s ease;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* btn */
+.btn {
+  animation: bounceIn 1s ease;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* already hover irukku — just enhance */
+.btn:hover {
+  transform: scale(1.05);
+}

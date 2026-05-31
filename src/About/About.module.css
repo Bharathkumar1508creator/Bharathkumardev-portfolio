@@ -1,0 +1,123 @@
+.container {
+  padding: 40px;
+  height: auto; /* 🔥 fix pannom (100vh remove) */
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.dec {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+
+  /* animation */
+  animation: fadeUp 0.8s ease forwards;
+  transform: translateY(30px);
+}
+
+/* Grid layout */
+.content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 80px;
+  gap: 20px;
+}
+
+/* Card style */
+.section {
+  background-color: #f8f9fa;
+  color: black;
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  /* animation */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Animation delay */
+.section:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+.section:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+.section:nth-of-type(3) {
+  animation-delay: 0.6s;
+}
+
+/* List style */
+.section ul {
+  padding-left: 20px;
+}
+
+.section li {
+  margin: 5px 0;
+  padding-left: 10px;
+  list-style: none;
+  transition: 0.3s;
+}
+
+/* Hover effects */
+.section:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  border: 2px groove gray;
+}
+
+.section li:hover {
+  color: #007bff;
+  transform: translateX(5px);
+}
+
+/* Animation */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px){
+
+  .container{
+    padding: 20px;
+  }
+
+  .title{
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .dec{
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .content{
+    flex-direction: column;   /* 🔥 main fix */
+    align-items: center;
+    margin-top: 40px;
+    gap: 20px;
+  }
+
+  .section{
+    width: 90%;
+    max-width: 300px;
+    padding: 15px;
+  }
+
+  .section li{
+    font-size: 14px;
+  }
+}
